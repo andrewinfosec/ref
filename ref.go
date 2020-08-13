@@ -24,7 +24,6 @@ ref loc       - set location of database to current directory
 func checkErr(err error) {
 	// {{{
 	if err != nil {
-		fmt.Println(err.Error())
 		panic(err)
 	}
 	// }}}
@@ -48,7 +47,6 @@ func dbPath() string {
 
 func cmdAdd() {
 	// {{{
-
 	// identify reference number
 	db := dbPath()
 
