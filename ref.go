@@ -36,7 +36,7 @@ func cmdAdd() {
 
 	if _, err := os.Stat(user.HomeDir + "/.ref"); os.IsNotExist(err) {
 		fmt.Println("Error: ~/.ref does not exist. Use REF LOC to create." + "\n\n" + HELP)
-    os.Exit(0)
+		os.Exit(0)
 	}
 
 	data, err := ioutil.ReadFile(user.HomeDir + "/.ref")
@@ -118,10 +118,7 @@ func main() {
 		case "loc":
 			cmdLoc()
 		default:
-      // XXX 
-
-
-
+			// XXX
 
 			fmt.Println("Unknown argument: " + v + "\n\n" + HELP)
 			os.Exit(0)
