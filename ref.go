@@ -22,15 +22,12 @@ ref loc       - set location of database to current directory
 `
 
 func checkErr(err error) {
-	// {{{
 	if err != nil {
 		panic(err)
 	}
-	// }}}
 }
 
 func dbPath() string {
-	// {{{
 	user, err := user.Current()
 	checkErr(err)
 
@@ -42,11 +39,9 @@ func dbPath() string {
 	data, err := ioutil.ReadFile(user.HomeDir + "/.ref")
 	checkErr(err)
 	return strings.TrimSpace(string(data))
-	// }}}
 }
 
 func cmdAdd() {
-	// {{{
 	// identify reference number
 	db := dbPath()
 
@@ -93,11 +88,9 @@ func cmdAdd() {
 	checkErr(err)
 	err5 := syscall.Exec(binary, []string{"open", db + "/" + number}, os.Environ())
 	checkErr(err5)
-	// }}}
 }
 
 func cmdLoc() {
-	// {{{
 	loc, err := os.Getwd()
 	checkErr(err)
 
@@ -108,11 +101,9 @@ func cmdLoc() {
 	checkErr(err2)
 
 	fmt.Println("Location of database set to " + loc + " in " + user.HomeDir + "/.ref")
-	// }}}
 }
 
 func openRef(n string) {
-	// {{{
 	db := filepath.Clean(dbPath())
 
 	if _, err := os.Stat(db + "/" + n); os.IsNotExist(err) {
@@ -125,15 +116,11 @@ func openRef(n string) {
 	open, err := exec.LookPath("open")
 	checkErr(err)
 
-	// attempt to open .html files
 	exec.Command(bash, "-c", open+" "+"\""+db+"\""+"/"+n+"/*.html").Output()
-	// attempt to open .pdf files
 	exec.Command(bash, "-c", open+" "+"\""+db+"\""+"/"+n+"/*.pdf").Output()
-	// }}}
 }
 
 func main() {
-	// {{{
 	if len(os.Args) < 2 {
 		fmt.Println(HELP)
 		os.Exit(0)
@@ -152,5 +139,4 @@ func main() {
 		}
 		openRef(number)
 	}
-	// }}}
 }
