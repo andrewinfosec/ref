@@ -17,7 +17,7 @@ const HELP = `
 ref -- Manage references for large writing projects.
 
 ref add       - create reference number, copy to clipboard, and open corresponding directory
-ref <number>  - open file associated with reference <number>
+ref <number>  - open files associated with reference <number>
 ref loc       - set location of database to current directory
 `
 
