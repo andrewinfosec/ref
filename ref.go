@@ -18,7 +18,7 @@ ref -- Manage references for large writing projects.
 
 ref add       - create reference number, copy to clipboard, and open corresponding directory
 ref <number>  - open files associated with reference <number>
-ref loc       - set location of database to current directory
+ref loc       - set location of database to current directory (stored in ~/.ref)
 `
 
 func checkErr(err error) {
@@ -108,6 +108,7 @@ func openRef(n string) {
 
 	if _, err := os.Stat(db + "/" + n); os.IsNotExist(err) {
 		fmt.Println("No such reference number:", n)
+		os.Exit(0)
 	}
 
 	bash, err := exec.LookPath("bash")
