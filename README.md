@@ -15,4 +15,4 @@ During the writing process, when the time comes to add a new reference, use `$ r
 
 Reference numbers increase monotonically, so reference number 1 is followed by reference number 2, and so on. Reference numbers are never reused.
 
-To view the files associated with a reference number us `$ ref <number`. This will open the `*.html` and `*.pdf` files from the directory associated with the reference number.
+To view the files associated with a reference number us `$ ref <number>`. This will open the `*.html` and `*.pdf` files from the directory associated with the reference number.
