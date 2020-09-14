@@ -32,7 +32,7 @@ func dbPath() string {
 	checkErr(err)
 
 	if _, err := os.Stat(user.HomeDir + "/.ref"); os.IsNotExist(err) {
-		fmt.Println("Error: ~/.ref does not exist. Use `ref loc` to create." + "\n\n" + HELP)
+		fmt.Println("~/.ref does not exist. Use `ref loc` to create." + "\n\n" + HELP)
 		os.Exit(0)
 	}
 
@@ -136,7 +136,7 @@ func main() {
 		number := regexp.MustCompile(`\d+$`).FindString(os.Args[1])
 		if number == "" {
 			fmt.Println("Invalid argument: " + os.Args[1] + "\n" + HELP)
-			os.Exit(0)
+			os.Exit(1)
 		}
 		openRef(number)
 	}
