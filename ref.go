@@ -76,18 +76,18 @@ func cmdAdd() {
 	pbcopy, err := exec.LookPath("pbcopy")
 	checkErr(err)
 
-	_, err3 := exec.Command(bash, "-c", echo+" -n "+number+"| "+pbcopy).Output()
-	checkErr(err3)
+	_, err = exec.Command(bash, "-c", echo+" -n "+number+"| "+pbcopy).Output()
+	checkErr(err)
 
 	// create directory
-	err4 := os.Mkdir(db+"/"+number, 0700)
-	checkErr(err4)
+	err = os.Mkdir(db+"/"+number, 0700)
+	checkErr(err)
 
 	// open directory
 	binary, err := exec.LookPath("open")
 	checkErr(err)
-	err5 := syscall.Exec(binary, []string{"open", db + "/" + number}, os.Environ())
-	checkErr(err5)
+	err = syscall.Exec(binary, []string{"open", db + "/" + number}, os.Environ())
+	checkErr(err)
 }
 
 func cmdLoc() {
@@ -97,8 +97,8 @@ func cmdLoc() {
 	user, err := user.Current()
 	checkErr(err)
 
-	err2 := ioutil.WriteFile(user.HomeDir+"/.ref", []byte(loc+"\n"), 0600)
-	checkErr(err2)
+	err = ioutil.WriteFile(user.HomeDir+"/.ref", []byte(loc+"\n"), 0600)
+	checkErr(err)
 
 	fmt.Println("Location of database set to " + loc + " in " + user.HomeDir + "/.ref")
 }
