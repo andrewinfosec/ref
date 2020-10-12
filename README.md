@@ -3,7 +3,7 @@
 
 By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
 
-`ref` is a CLI took for managing references in large writing projects. The program uses the filesystem as a database, with one directory per reference number.  
+`ref` is a CLI tool for managing references in large writing projects. The program uses the filesystem as a database, with one directory per reference number.  
 
 NB: This program assumes macOS.
 
