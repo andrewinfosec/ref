@@ -1,7 +1,7 @@
 
 ### ref: Manage references for large writing projects
 
-By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
+By Andrew Stewart ([https://andrewinfosec.com](https://andrewinfosec.com))
 
 `ref` is a CLI tool for managing references in large writing projects. The program uses the filesystem as a database, with one directory per reference number.  
 
